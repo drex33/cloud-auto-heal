@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  cloud-auto-heal-monitor:
+    image: "cloud-auto-heal-monitor:1.2"
+    network_mode: host
+    volumes:
+      - /var/log/deploy_queue.log:/var/log/deploy_queue.log
+      - /app/config/auto_heal.conf:/etc/auto_heal.conf
+    container_name: mercy_monitor
+    restart: always
+
+  cloud-auto-heal-engine:
+    image: "cloud-auto-heal-engine:1.2"
+    network_mode: host
+    volumes:
+      - /var/log/mercy/control_healing.log:/var/log/mercy/control_healing.log
+      - /var/log/mercy/compute_healing.log:/var/log/mercy/compute_healing.log
+      - /var/log/mercy/receive_queue.log:/var/log/mercy/receive_queue.log
+      - /app/config/auto_heal.conf:/etc/auto_heal.conf
+    container_name: mercy_engine
+    restart: always

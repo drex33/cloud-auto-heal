@@ -1,0 +1,13 @@
+FROM python
+
+LABEL maintainer=jssong@somansa.com
+
+WORKDIR /app
+
+COPY engine /app
+
+COPY requirements.txt /app
+
+RUN pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
+
+ENTRYPOINT ["python3", "-m", "receiver"]
