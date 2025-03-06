@@ -36,7 +36,7 @@ ver 1.2 (최신)
 
 ## Flow Chart
 
-![image](/uploads/be16ee523af355955fd670b26299039b/image.png)
+![image](https://github.com/user-attachments/assets/9746d6e7-a8b0-4b8c-90ac-85e833d04b17)
 
 
 ### 각 컨테이너 서비스 동작서버
